@@ -1,0 +1,23 @@
+{% extends 'portfolio/base.html'%}
+{% block content %}
+<div class="container text-center">
+<h1>BLOG</h1>
+
+<!-- pluralize will take the 's' off blogs if there is only one -->
+<h2>Olive has written {{blogs.count}} blog{{blogs.count|pluralize}}</h2>
+
+{% for blog in blogs %}
+
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2>
+<h5>{{blog.date|date:'M d Y'|upper}}</h5>
+<!-- strip tags will remove any html tags while 'safe' would render them -->
+<p>{{blog.description|striptags|truncatechars:250}}</p>
+
+
+{% endfor %}
+
+<br>
+<a href="..">Home</a>
+</br>
+</div>
+{% endblock %}
