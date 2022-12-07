@@ -5,7 +5,7 @@
     {% load static %}
     <img src="{% static 'portfolio/2GamerCats.png' %}" height=400 width=400>
     <br>
-    <a href="{% static 'portfolio/Resume.pdf' %}?">Resume</a>
+    <a href="{% static 'portfolio/Resume.pdf' %}?" target="_blank">Resume</a>
     </br>
     <br>
     <h2>Projects</h2>
@@ -18,7 +18,7 @@
   <div class="col-sm-4 mb-4">
     <div class="card">
         {% if project.url %}
-        <a href="{{ project.url }}"><h2 class="card-title">{{ project.title }}</h2></a>
+        <a href="{{ project.url }}" target="_blank"><h2 class="card-title">{{ project.title }}</h2></a>
         {% else %}
         <h2 class="card-title">{{ project.title }}</h2>
         {% endif %}  
