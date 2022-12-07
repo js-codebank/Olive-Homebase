@@ -8,7 +8,7 @@
 
 {% for blog in blogs %}
 
-<a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2>
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a>
 <h5>{{blog.date|date:'M d Y'|upper}}</h5>
 <!-- strip tags will remove any html tags while 'safe' would render them -->
 <p>{{blog.description|striptags|truncatechars:250}}</p>

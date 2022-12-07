@@ -11,14 +11,16 @@
     <h2>Projects</h2>
     </br>
     {% for project in projects %}
-
+    {% if project.url %}
+    <a href="{{ project.url }}"><h2>{{ project.title }}</h2></a>
+    {% else %}
     <h2>{{ project.title }}</h2>
+    {% endif %}
+    
     <p1>{{ project.description }}</p1>
     <br>
     <img src="{{ project.image.url }}" height=200 width=200>
-    {% if project.url %}
-    <a href="{{ project.url }}">Link</a>
-    {% endif %}
+
 
     {% endfor %}
     <br>
